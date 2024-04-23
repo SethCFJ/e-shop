@@ -1,0 +1,87 @@
+@use "../../assets/colours.scss" as c;
+.page {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  margin-top: 30px;
+  min-width: 50%;
+  background-color: c.$blue;
+  border-radius: 10px;
+  min-height: 300px;
+  padding: 20px;
+  font-family: "Jersey 25", sans-serif;
+  &__innerContainer {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    &__name {
+      color: white;
+      font-weight: bold;
+      font-size: 40px;
+    }
+    &__qtyInput {
+      width: 80px;
+      font-size: 30px;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      &__buttons {
+        width: calc(100% / 3);
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    &__favouriteImg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__price {
+    color: white;
+    font-size: 30px;
+    background-color: c.$pink;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+.img {
+  width: 50%;
+  border-radius: 10px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.variants {
+  color: white;
+  user-select: none;
+  border-radius: 5px;
+  &:active {
+    user-select: none;
+  }
+}
+.select {
+  user-select: none;
+  width: 150px;
+  font-size: 30px;
+}
+.addToCartContainer {
+  display: flex;
+  flex-direction: column;
+  &__button {
+    background-color: c.$green;
+    height: 50px;
+    font-size: 30px;
+  }
+}
