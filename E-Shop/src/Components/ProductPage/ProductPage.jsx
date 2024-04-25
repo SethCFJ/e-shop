@@ -50,7 +50,9 @@ const ProductPage = ({ product }) => {
                 {product.name}
               </h1>
               <h3 className={styles.container__price}>${product.price}</h3>
-              <h2 style={{ color: "white" }}>Variants:</h2>
+              <h2 className={styles.text} style={{ color: "white" }}>
+                Variants:
+              </h2>
               <select className={styles.select}>
                 {product.variant.map((vari) => (
                   <option

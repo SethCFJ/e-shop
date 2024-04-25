@@ -21,15 +21,7 @@ const ProductLoader = () => {
         setError(error);
       });
   }, [id]);
-  return (
-    <>
-      {/* {fetchStatus === "LOADING" && <LoadingSpinner />} */}
-      {/* {fetchStatus === "FAILED" && (
-        <Message severity="error" message={error.message} />
-      )} */}
-      {fetchStatus === "SUCCESS" && <ProductPage product={product} />}
-    </>
-  );
+  return <>{fetchStatus === "SUCCESS" && <ProductPage product={product} />}</>;
 };
 
 export default ProductLoader;

@@ -1,3 +1,4 @@
+@use "../../partials/queries.scss";
 @use "../../assets/colours.scss" as c;
 .carousel {
   position: relative;
@@ -8,6 +9,18 @@
   height: 400px;
   justify-content: center;
   font-family: "Roboto", sans-serif;
+  @include queries.phone {
+  }
+  @include queries.tablet {
+    width: 80%;
+  }
+  @include queries.laptop {
+    height: 350px;
+    width: 500px;
+  }
+  @include queries.desktop {
+    width: 800px;
+  }
 }
 .container {
   background-color: c.$dark-grey;
@@ -22,12 +35,37 @@
   color: white;
   box-shadow: 2px 2px 20px c.$pink;
   padding: 10px;
+  @include queries.phone {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  @include queries.tablet {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  @include queries.laptop {
+  }
+  @include queries.desktop {
+  }
 }
 .img {
   height: 300px;
 
   border-radius: 30px;
   box-shadow: 2px 2px 5px c.$dark-blue;
+  @include queries.phone {
+    height: 150px;
+  }
+  @include queries.tablet {
+    height: 200px;
+  }
+  @include queries.laptop {
+    height: 200px;
+  }
+  @include queries.desktop {
+  }
 }
 
 .arrowLeft {
@@ -57,7 +95,15 @@
   display: flex;
   position: absolute;
   bottom: 10%;
-
+  @include queries.phone {
+    bottom: 5%;
+  }
+  @include queries.tablet {
+  }
+  @include queries.laptop {
+  }
+  @include queries.desktop {
+  }
   &__buttons {
     background-color: black;
     height: 10px;
@@ -90,6 +136,16 @@
   justify-content: center;
   border-radius: 10px;
   text-align: center;
+  @include queries.phone {
+  }
+  @include queries.tablet {
+    flex-direction: row;
+    gap: 10px;
+  }
+  @include queries.laptop {
+  }
+  @include queries.desktop {
+  }
   &__name {
     font-weight: bold;
     color: c.$black;
@@ -97,6 +153,15 @@
     border-radius: 10px;
     padding: 5px;
     box-shadow: 2px 2px 5px c.$dark-blue;
+    @include queries.phone {
+      margin: 0;
+    }
+    @include queries.tablet {
+    }
+    @include queries.laptop {
+    }
+    @include queries.desktop {
+    }
   }
   &__price {
     color: white;

@@ -24,7 +24,7 @@ const ProductsGrid = () => {
       {products.map((product) => (
         <div className={styles.container} key={product.id}>
           <div className={styles.heading}>
-            <h1>{product.name}</h1>
+            <h1 className={styles.nameText}>{product.name}</h1>
             {product.favourited ? (
               <img className={styles.favouriteImg} src={heartFill} />
             ) : (

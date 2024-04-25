@@ -23,40 +23,44 @@ const CheckoutPage = () => {
   return (
     <div className={styles.grid}>
       <Heading text={"Your Cart"} />
-      {cart.length === 0
-        ? console.log("empty")
-        : cart.map((product) => (
-            <div className={styles.itemContainer} key={product.id}>
-              <div className={styles.itemRow}>
-                <Link to={`/products/${product.id}`}>
-                  <img
-                    className={styles.img}
-                    src={product.imageLink}
-                    alt={product.name}
-                  />
-                </Link>
-                <h1>{product.name}</h1>
-                <div>
-                  <h3>Each</h3>
-                  <h3 className={styles.price}>${product.price}</h3>
-                </div>
-                <div>
-                  <h3>Quantity</h3>
-                  <h3 className={styles.price}>{product.cartQty}</h3>
-                </div>
-                <div>
-                  <h3>Total</h3>
-                  <h3 className={styles.price}>
-                    ${product.cartQty * product.price}
-                  </h3>
-                </div>
+      {cart.length === 0 ? (
+        <div className={styles.emptyCart}>
+          <h1>Your cart is empty!</h1>
+        </div>
+      ) : (
+        cart.map((product) => (
+          <div className={styles.itemContainer} key={product.id}>
+            <div className={styles.itemRow}>
+              <Link to={`/products/${product.id}`}>
+                <img
+                  className={styles.img}
+                  src={product.imageLink}
+                  alt={product.name}
+                />
+              </Link>
+              <h1>{product.name}</h1>
+              <div>
+                <h3>Each</h3>
+                <h3 className={styles.price}>${product.price}</h3>
               </div>
-              <span>
-                <h5>Edit</h5>
-                <h5>Remove</h5>
-              </span>
+              <div>
+                <h3>Quantity</h3>
+                <h3 className={styles.price}>{product.cartQty}</h3>
+              </div>
+              <div>
+                <h3>Total</h3>
+                <h3 className={styles.price}>
+                  ${product.cartQty * product.price}
+                </h3>
+              </div>
             </div>
-          ))}
+            <span>
+              <h5>Edit</h5>
+              <h5>Remove</h5>
+            </span>
+          </div>
+        ))
+      )}
       <div className={styles.checkoutContainer}>
         <h3 className={styles.checkoutContainer__totalText}>
           Total Cost: ${totalCost}

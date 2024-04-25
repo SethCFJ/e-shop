@@ -1,4 +1,5 @@
 @use "../../assets/colours.scss" as c;
+@use "../../partials/queries.scss";
 .page {
   display: flex;
   justify-content: center;
@@ -11,15 +12,43 @@
   min-height: 300px;
   padding: 20px;
   font-family: "Jersey 25", sans-serif;
+
+  @include queries.phone {
+    width: 80%;
+    font-size: 20px;
+  }
+  @include queries.tablet {
+    width: 80%;
+  }
+  @include queries.laptop {
+    width: 300px;
+  }
   &__innerContainer {
     width: 300px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    @include queries.phone {
+      width: 50%;
+      font-size: 20px;
+    }
+    @include queries.tablet {
+      width: 50%;
+    }
+    @include queries.laptop {
+      width: 300px;
+    }
     &__name {
       color: white;
       font-weight: bold;
       font-size: 40px;
+      @include queries.phone {
+        font-size: 24px;
+      }
+      @include queries.tablet {
+      }
+      @include queries.laptop {
+      }
     }
     &__qtyInput {
       width: 80px;
@@ -28,7 +57,17 @@
       height: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
+      @include queries.phone {
+        width: 70px;
+        font-size: 18px;
+      }
+      @include queries.tablet {
+        width: 70px;
+        font-size: 18px;
+      }
+      @include queries.laptop {
+      }
       &__buttons {
         width: calc(100% / 3);
       }
@@ -52,16 +91,34 @@
     width: fit-content;
     padding: 10px;
     border-radius: 5px;
+    @include queries.phone {
+      font-size: 20px;
+    }
+    @include queries.tablet {
+    }
+    @include queries.laptop {
+    }
   }
 }
 .img {
   width: 50%;
   border-radius: 10px;
+
+  @include queries.phone {
+    height: 200px;
+  }
+  @include queries.tablet {
+    height: 200px;
+  }
+  @include queries.laptop {
+    height: 300px;
+  }
 }
 .content {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
 }
 .variants {
   color: white;
@@ -70,11 +127,22 @@
   &:active {
     user-select: none;
   }
+  &::selection {
+    user-select: none;
+  }
 }
 .select {
   user-select: none;
   width: 150px;
   font-size: 30px;
+  @include queries.phone {
+    font-size: 20px;
+  }
+  @include queries.tablet {
+    font-size: 20px;
+  }
+  @include queries.laptop {
+  }
 }
 .addToCartContainer {
   display: flex;
@@ -83,5 +151,23 @@
     background-color: c.$green;
     height: 50px;
     font-size: 30px;
+    @include queries.phone {
+      font-size: 24px;
+    }
+    @include queries.tablet {
+      font-size: 24px;
+    }
+    @include queries.laptop {
+    }
+  }
+}
+.text {
+  @include queries.phone {
+    font-size: 20px;
+  }
+  @include queries.tablet {
+    font-size: 20px;
+  }
+  @include queries.laptop {
   }
 }
